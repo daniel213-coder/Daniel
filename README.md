@@ -1,0 +1,2 @@
+# Daniel
+About "Persona" series
