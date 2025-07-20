@@ -1,0 +1,430 @@
+:root {
+    --primary-color: #e74c3c;
+    --secondary-color: #2c3e50;
+    --accent-color: #3498db;
+    --light-color: #ecf0f1;
+    --dark-color: #34495e;
+    --text-color: #333;
+    --text-light: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--secondary-color), var(--dark-color));
+    color: var(--text-light);
+    padding: 3rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.persona5.jp/img/common/bg_header.png') no-repeat center/cover;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+header .container {
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    animation: fadeIn 1.5s ease;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--dark-color);
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0 1rem;
+    position: relative;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 1rem 0.5rem;
+    display: block;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    margin: 3rem 0;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* Game Cards */
+.game-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.game-header {
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.year {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.game-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.game-image {
+    flex: 1;
+    min-width: 300px;
+    overflow: hidden;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.game-card:hover .game-image img {
+    transform: scale(1.05);
+}
+
+.game-info {
+    flex: 2;
+    min-width: 300px;
+    padding: 2rem;
+}
+
+.game-info h3 {
+    color: var(--secondary-color);
+    margin: 1.5rem 0 1rem;
+    font-size: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+}
+
+.features {
+    list-style-type: none;
+    margin: 1.5rem 0;
+}
+
+.features li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 2rem;
+    line-height: 1.7;
+}
+
+.features li::before {
+    content: '◆';
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.btn-details {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.btn-details:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+/* Soundtracks Section */
+.soundtrack-section {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+}
+
+.soundtrack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.track-card {
+    background-color: var(--light-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.track-card:hover {
+    transform: translateY(-5px);
+}
+
+.track-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.track-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.track-info {
+    padding: 1.5rem;
+}
+
+.track-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.track-game {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+}
+
+.audio-player {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+audio {
+    width: 100%;
+    height: 40px;
+}
+
+/* About Section */
+.about-section {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: url('https://www.persona5.jp/img/common/icon_phantom.png') no-repeat center/contain;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 3rem 0;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+footer p:first-child {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav li {
+        margin: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .game-content {
+        flex-direction: column;
+    }
+    
+    .game-info {
+        padding: 1.5rem;
+    }
+    
+    .soundtrack-section {
+        padding: 2rem;
+    }
+    
+    .soundtrack-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-section {
+        padding: 2rem;
+    }
+}
